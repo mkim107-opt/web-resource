@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {list-style: none;}
+a {text-decoration: none;}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #DFD8D2;
+    padding-top: 80px;
+}
+
+/* Header Section */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: #fff;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+.header-container{
+    width: 100%;
+    max-width: 1800px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    margin: 0 auto;
+}
+
+.logo {
+    height: 35px;
+    display: inline-block;
+    margin: 12px 0 12px 25px;
+}
+
+/* --- Serve Pages Common banner --- */
+.page-banner {
+    width: 100%;
+    margin-top: 0;
+    padding-top: 0;
+}
+.banner-image {
+    width: 100%;
+    height: 350px; 
+    background-color: #222;
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+}
+.banner-title {
+    width: 100%;
+    background-color: #fff; 
+    padding: 40px 20px;
+    text-align: center;
+}
+.banner-title h1 {
+    font-size: 3rem;
+    color: #222;
+    margin: 0;
+}
+
+
+/* --- Navigation & Hambuger menu --- */
+nav {position: relative;}
+#nav-toggle{display: none;}
+.navicon {
+    position: relative;
+    top: 50%;
+    right: 20px;
+    transform: translate(-50%); /* Adjusts position perfectly to the center */
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    display: inline-block;
+}
+/* Middle line of the hambuger icon */
+.navicon-bar {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 2px;
+    background: #5d4037;
+}
+/* Top and bottom line of the hambuger icon */
+.navicon::before,
+.navicon::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #5d4037;
+    transition: all 0.3s;
+}
+.navicon::before {top: 0;}
+.navicon::after {bottom: 0;}
+/* Hamburger 'X' Animation (when checkbox is checked */
+#nav-toggle:checked + .navicon .navicon-bar {opacity: 0;}
+#nav-toggle:checked + .navicon::before {top: 10px; transform: rotate(-45deg);}
+#nav-toggle:checked + .navicon::after {bottom: 10px; transform: rotate(45deg);}
+
+/* Dropdown Menu */
+.nav-items{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: -15px;
+    background: #fff;
+    width: 200px;
+}
+/* show the dropdown menu when the hidden checkbox is checked */
+#nav-toggle:checked ~ .nav-items {
+    display: flex;
+}
+.nav-items li a {
+  padding: 15px 20px;
+  color: rgba(0,0,0,0.5);
+  display: block;
+}
+.nav-items li a:hover { background: rgba(93, 64, 55, 0.5);}
+
+
