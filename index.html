@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Web Project</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <div id ="main-header"></div>
+
+    <main class="hero">
+        <div class="deco-circle-1"></div>
+        
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Latte Knowledge</h1><h2>Understanding Coffee Beyond the Cup</h2>
+                <p>Coffee is one of the most popular beverages in the world, with billions of cups enjoyed every year. Its global appeal naturally sparks our curiosity, and we want to know more about this beloved drink. Inspired by that curiosity, this article gathers fascinating insights into coffee, from its origins and roasting methods to its varieties, brewing techniques, and the industry that surrounds it.<p>
+            </div>
+            <div class="hero-visual">
+                <div class="deco-circle-2"></div>
+                <div class="deco-circle-3"></div>
+                <div class="deco-circle-4"></div>
+
+                <div class="hero-image">
+                    <div class="container">
+                        <div class="saucer"></div>
+                        <div class="cup">
+                            <div class="cup-center">
+                                <div class="froth"></div>
+                                <div class="coffee-dark-top"></div>
+                                <div class="hot-steam"></div>
+                            </div>
+                            <div class="cup-handle"></div>
+                        </div>
+                        <div class="teaspoon">
+                            <div class="spoon-center"></div>
+                            <div class="spoon-handle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Fetch the shared header file
+        fetch('html/header.html') // Path: go up one folder to find header.html
+        .then(response => {
+            if(!response.ok) throw new Error('Failed to load header');
+            return response.text();
+        })
+        .then(data => {
+            // Insert the header container
+            document.getElementById('main-header').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Error loading the header:', error);
+        });
+    </script>
+</body>
+</html>
