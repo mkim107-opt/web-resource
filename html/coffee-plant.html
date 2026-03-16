@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Plant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/coffee-plant.css">
+</head>
+<body>
+    <div id="main-header"></div>
+    <div class="banner">
+        <h1>Understanding The Coffee Plant</h1>
+        <div class="mouse-container">
+            <div class="mouse"></div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="zigzag-container">
+            <div class="row-align">
+                <div class="row-image">
+                    <img src="../image/leaves.jpg" alt="Coffee-Leaves">
+                </div>
+                <div class="row-text">
+                    <h2>Leaves</h2>
+                    <p>
+                        Coffee plant leaves are typically oval-shaped with a waxy surface, ranging in color from bright green to hues of yellow, bronze, or purple. They act as a vital natural shield, protecting the delicate plant from intense daytime sun and harsh nighttime frost. Interestingly, these protective leaves contain the highest concentration of caffeine found anywhere in the coffee plant.
+                    </p>
+                </div>
+            </div>
+            <div class="row-align">
+                <div class="row-text">
+                    <h2>Flowers</h2>
+                    <p>
+                        The delicate, star-shaped white flowers bloom in dense clusters and are widely known for their intensely sweet fragrance that closely resembles jasmine. Following their brief blooming phase, the plant begins to develop its prized fruit—the coffee cherries. Additionally, these aromatic blossoms are often harvested and brewed to create a soothing, floral beverage known as coffee blossom tea.
+                    </p>
+                </div>
+                <div class="row-image">
+                    <img src="../image/flower.jpg" alt="Coffee-Flower">
+                </div>
+            </div>
+            <div class="row-align">
+                <div class="row-image">
+                    <img src="../image/plant.jpg" alt="Coffee-Fruit">
+                </div>
+                <div class="row-text">
+                    <h2>Fruits</h2>
+                    <p style="margin-bottom: 24px">
+                        Small green berries appear when the coffee tree flower is pollinated. After they ripen, they gradually change colour and it is at this point that they remind us of cherries. Inside each berry are two beans with the flat sides facing each other.
+                    </p>
+                    <p>
+                        In rare cases, a berry may contain only one coffee seed, known as a pea berry. Coffee made from such a bean is called pearl coffee. On average, a single coffee bush produces between 0.5 and 1 kg of coffee beans per year.
+                    </p>
+            </div>
+
+    </div>
+
+
+    <script>
+        fetch('header.html') 
+            .then(response => {
+                if (!response.ok) throw new Error('Header not found');
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('main-header').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error)
+            });
+    </script>
+
+    <script src="../Javascript/animation.js"></script>
+</body>
+</html>

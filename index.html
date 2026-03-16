@@ -10,39 +10,96 @@
 <body>
     <div id ="main-header"></div>
 
-    <main class="hero">
-        <div class="deco-circle-1"></div>
-        
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1>Latte Knowledge</h1><h2>Understanding Coffee Beyond the Cup</h2>
-                <p>Coffee is one of the most popular beverages in the world, with billions of cups enjoyed every year. Its global appeal naturally sparks our curiosity, and we want to know more about this beloved drink. Inspired by that curiosity, this article gathers fascinating insights into coffee, from its origins and roasting methods to its varieties, brewing techniques, and the industry that surrounds it.<p>
-            </div>
-            <div class="hero-visual">
-                <div class="deco-circle-2"></div>
-                <div class="deco-circle-3"></div>
-                <div class="deco-circle-4"></div>
+   <div class="growth-wrapper">
+    <div class="growth main-tree step-1">
+        <img src="image/home-tree.png" class="tree-img">
+    </div>
+    <div class="curve-wrapper">
+        <svg class="growth-curve" preserveAspectRatio="none" viewBox="0 0 100 100">
+            <path d="M 50 0 C 50 50, 25 50, 25 100" />
+        </svg>
+        <img src="image/deco-leaf.png" class="deco-img pos-1-1">
+        <img src="image/deco-leaf.png" class="deco-img pos-1-2">
+        <img src="image/deco-leaf.png" class="deco-img pos-1-3">
+    </div>
 
-                <div class="hero-image">
-                    <div class="container">
-                        <div class="saucer"></div>
-                        <div class="cup">
-                            <div class="cup-center">
-                                <div class="froth"></div>
-                                <div class="coffee-dark-top"></div>
-                                <div class="hot-steam"></div>
-                            </div>
-                            <div class="cup-handle"></div>
-                        </div>
-                        <div class="teaspoon">
-                            <div class="spoon-center"></div>
-                            <div class="spoon-handle"></div>
-                        </div>
-                    </div>
+    <div class="growth flower-tree step-2">
+        <img src="image/home-flower.png" class="tree-img">
+    </div>
+    <div class="curve-wrapper">
+        <svg class="growth-curve" preserveAspectRatio="none" viewBox="0 0 100 100">
+            <path d="M 25 0 C 25 50, 75 50, 75 100" />
+        </svg>
+        <img src="image/deco-flower.png" class="deco-img pos-2-1">
+        <img src="image/deco-flower.png" class="deco-img pos-2-2">
+        <img src="image/deco-flower.png" class="deco-img pos-2-3">
+        <img src="image/deco-flower.png" class="deco-img pos-2-4">
+    </div>
+
+    <div class="growth fruit-tree step-3">
+        <img src="image/home-cherry.png" class="tree-img">
+    </div>
+    <div class="curve-wrapper">
+        <svg class="growth-curve" preserveAspectRatio="none" viewBox="0 0 100 100">
+            <path d="M 75 0 C 75 50, 35 50, 35 100" />
+        </svg>
+        <img src="image/deco-cherry.png" class="deco-img pos-3-1">
+        <img src="image/deco-cherry.png" class="deco-img pos-3-2">
+        <img src="image/deco-cherry.png" class="deco-img pos-3-3">
+    </div>
+
+    <div class="growth harvest step-4">
+        <img src="image/home-harvest.png" class="tree-img">
+    </div>
+    <div class="curve-wrapper">
+        <svg class="growth-curve" preserveAspectRatio="none" viewBox="0 0 100 100">
+            <path d="M 35 0 C 35 50, 50 50, 50 100" />
+        </svg>
+        <img src="image/deco-bean.png" class="deco-img pos-4-1">
+        <img src="image/deco-bean.png" class="deco-img pos-4-2">
+        <img src="image/deco-bean.png" class="deco-img pos-4-3">
+    </div>
+
+    <div class="growth roast step-5">
+        <img src="image/home-roast.png" class="tree-img">
+    </div>
+
+    <svg class="growth-curve" preserveAspectRatio="none" viewBox="0 0 100 100" style="height: 400px; margin-top: -30px; margin-bottom: -80px;">
+        <path d="M 50 0 C 50 50, 50 50, 50 100" />
+    </svg>
+
+    <div class="final-cup-wrapper step-6">
+        <div class="canvas">
+            <div class="saucer"></div>
+            <div class="cup">
+                <div class="cup-center">
+                    <div class="froth"></div>
+                    <div class="coffee-dark-top"></div>
+                    <div class="hot-steam steam-move"></div>
+                </div>
+                <div class="cup-handle"></div>
+            </div>
+            <div class="teaspoon">
+                <div class="spoon-center"></div>
+                <div class="spoon-handle"></div>
+            </div>
+        </div>
+
+        <div class="button-wrapper">
+            <div class="link_wrapper">
+                <a href="html/coffee-plant.html">Meet the plant!</a>
+                <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 268.832 268.832">
+                    <path d="M265.17 125.577l-80-80c-4.88-4.88-12.796-4.88-17.677 0-4.882 4.882-4.882 12.796 0 17.678l58.66 58.66H12.5c-6.903 0-12.5 5.598-12.5 12.5 0 6.903 5.597 12.5 12.5 12.5h213.654l-58.66 58.662c-4.88 4.882-4.88 12.796 0 17.678 2.44 2.44 5.64 3.66 8.84 3.66s6.398-1.22 8.84-3.66l79.997-80c4.883-4.882 4.883-12.796 0-17.678z"/>
+                </svg>
                 </div>
             </div>
         </div>
-    </main>
+    </div>
+    
+</div>
+
+    
 
     <script>
         // Fetch the shared header file
@@ -52,8 +109,15 @@
             return response.text();
         })
         .then(data => {
-            // Insert the header container
-            document.getElementById('main-header').innerHTML = data;
+            let fixedData = data
+            .replaceAll('../index.html', 'index.html')
+            .replaceAll('../image/logo.png', 'image/logo.png')
+            .replaceAll('href="coffee-plant.html"', 'href="html/coffee-plant.html"')
+            .replaceAll('href="coffee-bean-anatomy.html"', 'href="html/coffee-bean-anatomy.html"')
+            .replaceAll('href="coffee-bean-types.html"', 'href="html/coffee-bean-types.html"')
+            .replaceAll('href="coffee-roasting.html"', 'href="html/coffee-roasting.html"');
+
+            document.getElementById('main-header').innerHTML = fixedData;
         })
         .catch(error => {
             console.error('Error loading the header:', error);

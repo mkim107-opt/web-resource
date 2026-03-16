@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Culture</title>
+    <title>Coffee Bean Anatomy</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/culture.css">
+    <link rel="stylesheet" href="../css/coffee-bean-anatomy.css">
 </head>
 <body>
     <div id="main-header"></div>
-        <section class="page-banner">
-        <div class="banner-image" style="background-image: url('../coffee-plant.jpg');"></div>
-        <div class="banner-title">
-            <h1>title</h1>
+    <div class="banner">
+        <h1>The Anatomy of Coffee Bean</h1>
+        <div class="mouse-container">
+            <div class="mouse"></div>
         </div>
-    </section>
+    </div>
+    <div class="content"></div>
+
+
     <script>
         fetch('header.html') 
             .then(response => {
@@ -28,5 +31,6 @@
                 console.error('Error:', error)
             });
     </script>
+    <script src="../Javascript/animation.js"></script>
 </body>
 </html>

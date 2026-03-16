@@ -1,0 +1,296 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {list-style: none;}
+a {text-decoration: none;}
+
+#main-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background: #f9f1e1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.banner{
+    height: 100vh;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-image: url('../image/bean.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 120px;
+}
+.banner h1{
+    color: #fff;
+    font-size: 4rem;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin: 0;
+}
+
+.mouse-container {
+    margin-top: 50px; 
+}
+.mouse {
+    width: 40px;
+    height: 60px;
+    border: 2px solid white;
+    border-radius: 20px;
+    position: relative;
+}
+.mouse::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white; 
+    border-radius: 50%;
+    animation: wheel 2s infinite;
+}
+@keyframes wheel {
+    0% {
+        opacity: 1;
+        top: 10px;
+    }
+    100% {
+        opacity: 0;
+        top: 30px; 
+    }
+}
+
+.content{
+    height: 1000px;
+    background-color: white;
+    padding: 100px 50px;
+    position: relative;
+    z-index: 2;
+}
+
+/* === Comparison Table Styles === */
+.comparison-wrapper {
+    background-color: #fff; 
+    max-width: 800px;
+    margin: 60px auto 80px auto;
+}
+.comparison-title {
+    text-align: left;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2d3748; 
+    margin-bottom: 30px;
+}
+/* Table layout */
+.coffee-table {
+    width: 100%;
+    border-collapse: separate; 
+    border-spacing: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 2px solid #c5bbb0; 
+    background-color: #fff;
+}
+.coffee-table th, 
+.coffee-table td {
+    border: 1px solid #c5bbb0; 
+    padding: 20px;
+    color: #2d3748;
+    font-size: 16px;
+    line-height: 1.6;
+}
+.coffee-table th {
+    background-color: #d0c6bc; 
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+}
+.coffee-table td.feature-name {
+    font-weight: 700;
+    background-color: #fff;
+    text-align: left;
+    width: 30%; /* Keeps the first column a consistent width */
+}
+@media (max-width: 700px) { /* Mobile responsive adjustments */
+    .coffee-table th, 
+    .coffee-table td {
+        padding: 12px;
+        font-size: 14px;
+    }
+    .coffee-table th {
+        font-size: 18px;
+    }
+}
+
+.arabica-section{
+    font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #2d3748;
+    max-width: 1000px;
+    margin: 80px auto 0 auto;
+    padding: 0 20px;
+}
+.arabica-section h2{
+    border-bottom: 2px solid #333;
+    font-size: 1.8em;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+.intro-text{
+    font-size: 1.05em;
+    margin-bottom: 24px;
+}
+/* === Arabica Varieties Archive Section === */
+.archive-container {
+    max-width: 900px;
+    margin: 50px auto;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+.archive-title {
+    font-size: 1.4rem;
+    color: #2d3748;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+.archive-item {
+    margin-bottom: 15px;
+    background-color: #fff;
+    border: 1px solid #eaddcc; 
+    border-radius: 8px;
+}
+.archive-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    cursor: pointer;
+    background-color: #f9f1e1; 
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #4a332a;
+    transition: background-color 0.2s ease;
+}
+.archive-summary:hover {
+    background-color: #f5efdf;
+}
+/* Varieties - text layout inside sumary */
+.bean-info{
+    flex: 1;
+}
+.bean-figure{
+    flex: 0 0 170px;
+    margin: 0;
+    text-align: center;
+}
+.bean-figure img{
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+/* Varieties - caption style */
+figcaption {
+    font-size: 0.8rem;
+    color: #888;
+    line-height: 1.2;
+}
+.bean-name { 
+    flex: 1;
+}
+.bean-origin {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #718096;
+}
+/* Varieties - hidden detailed content section */
+.archive-content {
+    padding: 30px;
+    border-top: 1px solid #eaddcc;
+    color: #4a5568;
+    line-height: 1.7;
+    font-size: 1rem;
+    gap: 25px;
+}
+.archive-content.flex-layout{
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+.archive-content ul {
+    margin-top: 15px;
+    padding-left: 20px;
+}
+.archive-content li {
+    margin-bottom: 8px;
+}
+
+/* Style the Image Used to Trigger the Modal */
+#myImg{
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#myimg:hover{opacity: 0.7;}
+/* The Modal (background) */
+.modal{
+    display: none; /* hidden by default */
+    position: fixed; /* stay in place */
+    z-index: 1; /* sit on top */
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0, 0.9);
+}
+/* Modal Content (Image) */
+.modal-content{
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
