@@ -1,0 +1,426 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {list-style: none;}
+a {text-decoration: none;}
+
+#main-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: #f9f1e1;
+    border-bottom: 2px solid #1f1f1f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+body{
+    background-color: #f9f1e1; 
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;;
+}
+
+.search-header {
+  padding: 40px 20px 0 20px;
+}
+.search-header h2 {
+    font-size: 0.875rem;
+    font-weight: 350;
+    color: #718096;
+    margin-top: 90px;
+}
+.search-header span {
+    font-weight: bold;
+    font-size: 0.875rem;
+    color: #222;
+}
+
+/* === Container using Flexbox for a Sidebar + Main Content layout === */
+.main-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 20px;
+}
+
+/*** ====== Left - Filtering Section Styling ====== ***/
+.filter-sidebar { 
+    flex: 0 0 300px; 
+    position: sticky; 
+    top: 120px; 
+    height: calc(100vh - 140px); 
+    overflow-y: scroll; 
+    padding-right: 30px;
+}
+
+.filter-top {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    margin-bottom: 10px;
+}
+.filter-sidebar h2 {
+    color: #222; 
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+/* reset button */
+.btn-reset {
+    background: none;
+    border: none;
+    color: #888;
+    text-decoration: underline;
+    font-size: 0.75rem;
+    cursor: pointer;
+}
+.btn-reset:hover {
+    color: #222;
+}
+
+.filter-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.filter-header h4{
+    font-size: 0.875rem;
+}
+.toggle-icon {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.filter-group.collapsed .filter-content{
+    display: none;
+}
+
+/* Flavor, Aroma, Origin */
+.filter-content label:nth-of-type(n+7){
+    display: none;
+}
+.filter-content.expanded label:nth-of-type(n+7){
+    display: block;
+}
+.view-more{
+    color: #222;
+    font-weight: bold;
+    font-size: 0.75rem;
+    cursor: pointer;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+.view-more:hover{
+    text-decoration: underline;
+}
+
+.filter-group {
+    width: 100%;
+    margin-bottom: 20px;
+}
+/* stack checkboxes and labels vertically */
+.filter-group label {
+    display: block;        
+    margin-bottom: 8px;    
+    font-size: 0.9rem;     
+    color: #444;          
+    cursor: pointer;  
+}
+/* add spacing between the input box (checkbox/radio) and the text */
+.filter-group input[type="checkbox"],
+.filter-group input[type="radio"] {
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+
+/* range input styling */
+input[type="range"]{
+    -webkit-appearance: none;
+    width: 100%;
+    background: transparent; 
+    margin-bottom: 15px;
+}
+/* level bar - horizontal line */
+input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px; 
+    cursor: pointer;
+    border-radius: 2px;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+#acidity-slider::-webkit-slider-runnable-track {
+    background: 
+        linear-gradient(to right, transparent 49.75%, #ccc 49.75%, #ccc 50.25%, transparent 50.25%),
+        #ffe0b2;
+}
+#body-slider::-webkit-slider-runnable-track {
+    background: 
+        linear-gradient(to right, transparent 49.75%, #ccc 49.75%, #ccc 50.25%, transparent 50.25%),
+        #e1f5fe; 
+}
+#roast-slider::-webkit-slider-runnable-track {
+    background: 
+        linear-gradient(to right, transparent 33%, #ccc 33%, #ccc 33.5%, transparent 33.5%),
+        linear-gradient(to right, transparent 66.5%, #ccc 66.5%, #ccc 67%, transparent 67%),
+        #ffcdd2; 
+}
+/* level bar - round shape */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 18px;
+    width: 18px;
+    background-color: #eee;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: -7px; 
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    border: 4px solid transparent;
+}
+#acidity-slider::-webkit-slider-thumb {
+  border-color: #ff9f43; 
+}
+#body-slider::-webkit-slider-thumb {
+  border-color: #add8e6; 
+}
+#roast-slider::-webkit-slider-thumb {
+  border-color: #ff4d4f; 
+}
+/* range labels */
+.range-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+
+/*** === Right - Results Section Styling === ***/
+.results-area {
+    flex: 1; 
+    padding: 20px;
+}
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+.result-container {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 380px; 
+}
+.result-container:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+}
+.result-wrap {
+    display: flex;
+    flex-direction: column; 
+    height: 100%;
+}
+.bean-image {
+    width: 100%;
+    height: 180px;
+    background-color: #f7f7f7; /* when no img is available */
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    position: relative;
+}
+.bean-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.bean-image.is-fallback::before {
+    content: ''; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+
+    transform: translate(-50%, -50%) rotate(90deg);
+    background-image: url('../image/deco-bean.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    filter: grayscale(100%); 
+
+    display:block;
+    pointer-events: none;
+}
+.bean-info {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.bean-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+.bean-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+}
+.bean-origin {
+    font-size: 0.8rem;
+    color: #999; 
+    font-style: italic; 
+    justify-content: flex-end;
+}
+.bean-specs {
+    display: flex;
+    gap: 4px;
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 12px;
+    justify-content: space-between;
+}
+.spec-label {
+    font-weight: 700;
+    margin-right: 4px;
+    justify-content: center;
+    color: #444;
+}
+
+.bean-detail {
+    font-size: 0.78rem;
+    color: #222;
+    line-height: 1.4;
+    margin-top: -8px;
+}
+
+.aroma-tag {
+    display: inline-block;
+    color: #D2691E;
+    background: #FFF5EE;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    margin-right: 4px;
+    margin-bottom: 10px;
+}
+.taste-tag {
+    display: inline-block;
+    color: #4682B4;
+    background: #F0F8FF;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    margin-right: 4px;
+    margin-bottom: 2px;
+}
+
+/* mobile Responsiveness */
+@media (max-width: 700px) {
+  .coffee-db-container {
+    flex-direction: column; 
+  }
+  .filter-sidebar {
+    flex: none;
+    width: 100%;
+  }
+}
+
+
+/* === Next Page Button === */
+.button-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 120px;    
+    right: 40px;   
+    z-index: 100;
+}
+.button-borders {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    align-items: center; 
+    gap: 20px;         
+    margin-bottom: 2px;
+}
+.button-guide-text {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    color: #222;      
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+    opacity: 0.8;  
+    animation: slideIn 1s ease-out;
+}
+.button-guide-text span {
+    display: inline-block;
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+.button-borders:before, .button-borders:after {
+  content: "";
+  position: absolute;
+  width: calc(100% + 1em);
+  height: 60%;
+  left: -0.5em;
+  border: 1px solid #1f1f1f; 
+  pointer-events: none;
+}
+.button-borders:before {
+  top: -0.5em;
+  border-bottom: 0;
+}
+.button-borders:after {
+  bottom: -0.5em;
+  border-top: 0;
+}
+.primary-button { /* button design */
+  font-family: 'Ropa Sans', sans-serif;
+  color: white;
+  cursor: pointer;
+  font-size: 16px; 
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  border: 1px solid #1f1f1f;
+  padding: 15px 40px; 
+  background-color: #1f1f1f;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 531.28 200'%3E%3Cdefs%3E%3Cstyle%3E .shape %7B fill: %23FF4655; %7D %3C/style%3E%3C/defs%3E%3Cg%3E%3Cpolygon class='shape' points='415.81 200 0 200 115.47 0 531.28 0 415.81 200' /%3E%3C/g%3E%3C/svg%3E");
+  background-size: 200%;
+  background-position: 200%;
+  background-repeat: no-repeat;
+  transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+}
+.primary-button:hover {
+  background-position: 40%;
+  border-color: #FF4655;
+}
+.primary-button:after {
+  content: "";
+  position: absolute;
+  background-color: #FF4655;
+  width: 5px;
+  height: 5px;
+  bottom: -1px;
+  right: -1px;
+}

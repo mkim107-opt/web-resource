@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tool.css">
+</head>
+
+<body>
+    <div id="main-header"></div>
+    <div class="search-header">
+        <h2>Home /<span> Find Your Perfect Bean</span></h2>
+    </div>
+
+<div class="button-container">
+    <div class="button-guide-text">
+        If you need more knowledge?
+    </div>
+    
+    <div class="button-borders">
+        <button class="primary-button" onclick="location.href='coffee-bean-types.html'">
+            CLICK HERE!
+        </button>
+    </div>
+</div>
+
+    <div class="main-container">
+        <div class="filter-sidebar">
+            <div class="filter-top">
+                <h2>Filter</h2>
+                <button id="reset-filters" class="btn-secondary">Reset All</button>
+            </div>
+
+            <hr>
+
+            <div class="filter-group">
+                <div class="filter-header" onclick="toggleFilter(this)">
+                    <h4>Primary Taste</h4>
+                    <span class="toggle-icon">-</span>
+                </div>
+                <div class="filter-content">
+                    <label><input type="checkbox" name="flavor" value="fruity">Fruity</label>
+                    <label><input type="checkbox" name="flavor" value="floral">Floral</label>
+                    <label><input type="checkbox" name="flavor" value="wine">Wine</label>
+                    <label><input type="checkbox" name="flavor" value="berry">Berry</label>
+                    <label><input type="checkbox" name="flavor" value="tropical">Tropical</label>
+                    <label><input type="checkbox" name="flavor" value="nutty">Nutty</label>
+                    <label><input type="checkbox" name="flavor" value="balanced">Balanced</label>
+                    <label><input type="checkbox" name="flavor" value="sweet">Sweet</label>
+                    <label><input type="checkbox" name="flavor" value="chocolate">Chocolate</label>
+                    <label><input type="checkbox" name="flavor" value="earthy">Earthy</label>
+                    <label><input type="checkbox" name="flavor" value="smoky">Smoky</label>
+                    <label><input type="checkbox" name="flavor" value="spicy">Spicy</label>
+                    <label><input type="checkbox" name="flavor" value="citrus">Citrus</label>
+                    <label><input type="checkbox" name="flavor" value="herbal">Herbal</label>
+                    <label><input type="checkbox" name="flavor" value="bitter">Bitter</label>
+                    <label><input type="checkbox" name="flavor" value="dark">Dark</label>
+                    <label><input type="checkbox" name="flavor" value="woody">Woody</label>
+                    <label><input type="checkbox" name="flavor" value="intense">Intense</label>
+                    <label><input type="checkbox" name="flavor" value="tart">Tart</label>
+                    <label><input type="checkbox" name="flavor" value="clean">Clean</label>
+                    <div class="view-more" onclick="showAll(this)">+ View More</div>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <div class="filter-header" onclick="toggleFilter(this)">
+                    <h4>Aroma</h4>
+                    <span class="toggle-icon">-</span>
+                </div>
+                <div class="filter-content">
+                    <label><input type="checkbox" name="aroma" value="jasmine">Jasmine</label>
+                    <label><input type="checkbox" name="aroma" value="berry">Berry</label>
+                    <label><input type="checkbox" name="aroma" value="lemon">Lemon</label>
+                    <label><input type="checkbox" name="aroma" value="cherry">Cherry</label>
+                    <label><input type="checkbox" name="aroma" value="chocolate">Chocolate</label>
+                    <label><input type="checkbox" name="aroma" value="black-tea">Black Tea</label>
+                    <label><input type="checkbox" name="aroma" value="peach">Peach</label>
+                    <label><input type="checkbox" name="aroma" value="plum">Plum</label>
+                    <label><input type="checkbox" name="aroma" value="floral">Floral</label>
+                    <label><input type="checkbox" name="aroma" value="blueberry">Blueberry</label>
+                    <label><input type="checkbox" name="aroma" value="earth">Earth</label>
+                    <label><input type="checkbox" name="aroma" value="spice">Spice</label>
+                    <label><input type="checkbox" name="aroma" value="walnut">Walnut</label>
+                    <label><input type="checkbox" name="aroma" value="apple">Apple</label>
+                    <label><input type="checkbox" name="aroma" value="caramel">Caramel</label>
+                    <label><input type="checkbox" name="aroma" value="orange">Orange</label>
+                    <label><input type="checkbox" name="aroma" value="almond">Almond</label>
+                    <label><input type="checkbox" name="aroma" value="dark-choc">Dark Chocolate</label>
+                    <label><input type="checkbox" name="aroma" value="hazelnut">Hazelnut</label>
+                    <label><input type="checkbox" name="aroma" value="milk-choc">Milk Chocolate</label>
+                    <label><input type="checkbox" name="aroma" value="honey">Honey</label>
+                    <label><input type="checkbox" name="aroma" value="roasted-almond">Roasted Almond</label>
+                    <label><input type="checkbox" name="aroma" value="smoke">Smoke</label>
+                    <label><input type="checkbox" name="aroma" value="grape">Grape</label>
+                    <label><input type="checkbox" name="aroma" value="cinnamon">Cinnamon</label>
+                    <label><input type="checkbox" name="aroma" value="green-apple">Green Apple</label>
+                    <label><input type="checkbox" name="aroma" value="maple-syrup">Maple Syrup</label>
+                    <label><input type="checkbox" name="aroma" value="bergamot">Bergamot</label>
+                    <label><input type="checkbox" name="aroma" value="tangerine">Tangerine</label>
+                    <label><input type="checkbox" name="aroma" value="cocoa">Cocoa</label>
+                    <label><input type="checkbox" name="aroma" value="vanilla">Vanilla</label>
+                    <label><input type="checkbox" name="aroma" value="blackcurrant">Blackcurrant</label>
+                    <label><input type="checkbox" name="aroma" value="redcurrant">Redcurrant</label>
+                    <label><input type="checkbox" name="aroma" value="prune">Prune</label>
+                    <label><input type="checkbox" name="aroma" value="wine">Wine</label>
+                    <label><input type="checkbox" name="aroma" value="cedar">Cedar</label>
+                    <label><input type="checkbox" name="aroma" value="herb">Herb</label>
+                    <label><input type="checkbox" name="aroma" value="clove">Clove</label>
+                    <label><input type="checkbox" name="aroma" value="brown-sugar">Brown Sugar</label>
+                    <label><input type="checkbox" name="aroma" value="musk">Musk</label>
+                    <label><input type="checkbox" name="aroma" value="butter">Butter</label>
+                    <label><input type="checkbox" name="aroma" value="macadamia">Mecadamia</label>
+                    <label><input type="checkbox" name="aroma" value="mild">Mild</label>
+                    <label><input type="checkbox" name="aroma" value="roasted-barley">Roasted Barley</label>
+                    <label><input type="checkbox" name="aroma" value="wood">Wood</label>
+                    <label><input type="checkbox" name="aroma" value="roasted-grain">Roasted Grain</label>
+                    <label><input type="checkbox" name="aroma" value="pepper">Pepper</label>
+                    <label><input type="checkbox" name="aroma" value="tabacco">Tabacco</label>
+                    <label><input type="checkbox" name="aroma" value="roasted-peanut">Roasted Peanut</label>
+                    <label><input type="checkbox" name="aroma" value="jackfruit">Jackfruit</label>
+                    <label><input type="checkbox" name="aroma" value="anise">Anise</label>
+                    <div class="view-more" onclick="showAll(this)">+ View More</div>
+                </div>
+
+            </div>
+
+            <div class="filter-group">
+                <div class="filter-header" onclick="toggleFilter(this)">
+                    <h4>Origin</h4>
+                    <span class="toggle-icon">-</span>
+                </div>
+                <div class="filter-content">
+                    <label><input type="checkbox" name="origin" value="bolivia">Bolivia</label>
+                    <label><input type="checkbox" name="origin" value="brazil">Brazil</label>
+                    <label><input type="checkbox" name="origin" value="colombia">Colombia</label>
+                    <label><input type="checkbox" name="origin" value="costa-rica">Costa Rica</label>
+                    <label><input type="checkbox" name="origin" value="cuba">Cuba</label>
+                    <label><input type="checkbox" name="origin" value="el-salvador">El Salvador</label>
+                    <label><input type="checkbox" name="origin" value="ethiopia">Ethiopia</label>
+                    <label><input type="checkbox" name="origin" value="guatemala">Guatemala</label>
+                    <label><input type="checkbox" name="origin" value="honduras">Honduras</label>
+                    <label><input type="checkbox" name="origin" value="india">India</label>
+                    <label><input type="checkbox" name="origin" value="indonesia">Indonesia</label>
+                    <label><input type="checkbox" name="origin" value="jamaica">Jamaica</label>
+                    <label><input type="checkbox" name="origin" value="kenya">Kenya</label>
+                    <label><input type="checkbox" name="origin" value="malaysia">Malaysia</label>
+                    <label><input type="checkbox" name="origin" value="mexico">Mexico</label>
+                    <label><input type="checkbox" name="origin" value="nicaragua">Nicaragua</label>
+                    <label><input type="checkbox" name="origin" value="panama">Panama</label>
+                    <label><input type="checkbox" name="origin" value="peru">Peru</label>
+                    <label><input type="checkbox" name="origin" value="philippines">Philippines</label>
+                    <label><input type="checkbox" name="origin" value="png">PNG</label>
+                    <label><input type="checkbox" name="origin" value="rwanda">Rwanda</label>
+                    <label><input type="checkbox" name="origin" value="tanzania">Tanzania</label>
+                    <label><input type="checkbox" name="origin" value="uganda">Uganda</label>
+                    <label><input type="checkbox" name="origin" value="usa">USA (Hawaii)</label>
+                    <label><input type="checkbox" name="origin" value="vietnam">Vietnam</label>
+                    <label><input type="checkbox" name="origin" value="yemen">Yemen</label>
+                    <div class="view-more" onclick="showAll(this)">+ View More</div>
+                </div>
+
+            </div>
+
+            <div class="filter-group">
+                <div class="filter-header">
+                    <h4>Caffeine</h4>
+                </div>
+                <div class="filter-content">
+                    <label><input type="radio" name="caffeine" value="regular">Regular</label>
+                    <label><input type="radio" name="caffeine" value="high">High</label>
+                    <label><input type="radio" name="caffeine" value="low">Low</label>
+                    <label><input type="radio" name="caffeine" value="none">None</label>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <div class="filter-header">
+                    <h4>Species</h4>
+                </div>
+                <div class="filter-content">
+                    <select id="select">
+                        <option value="all">All</option>
+                        <option value="arabica">Arabica</option>
+                        <option value="robusta">Robusta</option>
+                        <option value="liberica">Liberica / Excelsa</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <div class="filter-header">
+                    <h4>Acidity</h4>
+                </div>
+                <div class="filter-content">
+                    <input type="range" id="acidity-slider" min="1" max="3" value="1">
+                    <div class="range-labels">
+                        <span>Low</span>
+                        <span>High</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <div class="filter-header">
+                    <h4>Body</h4>
+                </div>
+                <div class="filter-content">
+                    <input type="range" id="body-slider" min="1" max="3" value="1">
+                    <div class="range-labels">
+                        <span>Light</span>
+                        <span>Heavy</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <div class="filter-header">
+                    <h4>Roast Level</h4>
+                </div>
+                <div class="filter-content">
+                    <input type="range" id="roast-slider" min="1" max="3" value="1">
+                    <div class="range-labels">
+                        <span>Light</span>
+                        <span>Medium</span>
+                        <span>Dark</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <main class="results-area">
+            <div id="results-count">Showing <span id="count">0</span> beans</div>
+            <div id="bean-grid" class="grid-layout"></div>
+        </main>
+    </div>
+
+    <script>
+        fetch('header.html')
+            .then(response => {
+                if (!response.ok) throw new Error('Header not found');
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('main-header').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error)
+            });
+    </script>
+
+    <script src="../Javascript/animation.js"></script>
+    <script src="../Javascript/filter.js"></script>
+</body>
+
+</html>

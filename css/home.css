@@ -12,7 +12,7 @@ a {text-decoration: none;}
     top: 0;
     left: 0;
     width: 100%;
-    height: 120px;
+    height: 100px;
     background: #f9f1e1;
     display: flex;
     align-items: center;
@@ -21,7 +21,7 @@ a {text-decoration: none;}
 }
 
 body {
-    padding-top: 80px; 
+    padding-top: 100px; 
     min-height: 100vh;
     position: relative;
     background-color: #1f1f1f;
@@ -41,10 +41,10 @@ body {
     z-index: 10; 
 }
 /* Step Positioning layout */
-.step-1 { left: 50%; transform: translateX(-50%); width: 550px; margin-top: 190px; }
-.step-2 { left: 20%; transform: translateX(-50%); width: 350px; }
-.step-3 { left: 80%; transform: translateX(-50%); width: 380px; }
-.step-4 { left: 30%; transform: translateX(-50%); width: 300px; }
+.step-1 { left: 50%; transform: translateX(-50%); width: 550px; margin-top: 150px; }
+.step-2 { left: 25%; transform: translateX(-50%); width: 350px; }
+.step-3 { left: 70%; transform: translateX(-50%); width: 420px; }
+.step-4 { left: 35%; transform: translateX(-50%); width: 300px; }
 .step-5 { left: 50%; transform: translateX(-50%); width: 550px; }
 .step-6 {
     position: relative;
@@ -62,7 +62,7 @@ body {
 .growth-curve {
     width: 100%;
     height: 250px;
-    margin: -40px 0;
+    margin: -50px 0;
     display: block;
     z-index: 1;
     position: relative;
@@ -87,10 +87,8 @@ body {
 }
 .harvest .tree-img,
 .roast .tree-img {
-    transform: scale(0.9); 
+    transform: scale(0.8); 
 }
-
-/* 곡선과 장식 이미지를 같이 묶어주는 래퍼 */
 .curve-wrapper {
     position: relative;
     width: 100%;
@@ -103,6 +101,7 @@ body {
     z-index: 2; 
     position: relative;
 }
+
 .deco-img {
     position: absolute;
     filter: brightness(0) invert(1); 
@@ -110,25 +109,22 @@ body {
     pointer-events: none; 
     z-index: 5;
 }
-/* --- Decorative Asset Positioning --- */
 /* 1. Leaf Placements */
-.pos-1-1 { width: 45px; top: 15%; left: 45%; transform: rotate(-15deg); }
-.pos-1-2 { width: 60px; top: 45%; left: 33%; transform: rotate(-45deg); }
-.pos-1-3 { width: 35px; top: 75%; left: 28%; transform: rotate(10deg); }
+.pos-1-1 { width: 45px; top: 10%; left: 45%; transform: rotate(-15deg); } 
+.pos-1-2 { width: 60px; top: 35%; left: 33%; transform: rotate(-45deg); } 
+.pos-1-3 { width: 35px; top: 65%; left: 28%; transform: rotate(10deg); }  
 /* 2. Flower Placements */
-.pos-2-1 { width: 185px; top: -10%;   left: 24%; transform: rotate(15deg); }
-.pos-2-2 { width: 150px; top: 22%;  left: 40%; transform: rotate(-25deg); }
-.pos-2-3 { width: 205px; top: 52%;  left: 55%; transform: rotate(40deg); }
-.pos-2-4 { width: 105px; top: 65%; left: 72%; transform: rotate(-10deg); 
-}
+.pos-2-1 { width: 185px; top: -15%;  left: 24%; transform: rotate(15deg); } 
+.pos-2-2 { width: 150px; top: 10%;   left: 40%; transform: rotate(-25deg); } 
+.pos-2-3 { width: 205px; top: 40%;   left: 50%; transform: rotate(40deg); } 
 /* 3. Cherry Placements */
-.pos-3-1 { width: 65px; top: 15%; left: 65%; transform: rotate(-20deg); }
-.pos-3-2 { width: 80px; top: 45%; left: 53%; transform: rotate(-40deg); }
-.pos-3-3 { width: 50px; top: 80%; left: 40%; transform: rotate(15deg); }
+.pos-3-1 { width: 65px; top: 10%; left: 65%; transform: rotate(-20deg); }  
+.pos-3-2 { width: 80px; top: 40%; left: 53%; transform: rotate(-40deg); } 
+.pos-3-3 { width: 50px; top: 70%; left: 40%; transform: rotate(15deg); }   
 /* 4. Bean Placements */
-.pos-4-1 { width: 35px; top: 20%; left: 38%; transform: rotate(30deg); }
-.pos-4-2 { width: 45px; top: 50%; left: 42%; transform: rotate(-15deg); }
-.pos-4-3 { width: 30px; top: 75%; left: 48%; transform: rotate(45deg); }
+.pos-4-1 { width: 35px; top: 15%; left: 38%; transform: rotate(30deg); }  
+.pos-4-2 { width: 45px; top: 45%; left: 42%; transform: rotate(-15deg); } 
+.pos-4-3 { width: 30px; top: 70%; left: 48%; transform: rotate(45deg); }  
 
 /* === Main container for the CSS coffee cup illustration === */
 .canvas {
@@ -238,12 +234,61 @@ body {
   }
 }
 
+/* Container for the scroll indicator */
+.indicator {
+  position: absolute; /* Relative to the nearest positioned parent (the tree container) */
+  top: 18%;           /* Vertically centered relative to the tree */
+  right: 10%;         /* Spacing from the right side of the screen/container */
+  width: 30px;        /* Slightly smaller for a cleaner look */
+  height: 30px;
+  transform: translateY(-50%) rotate(45deg); /* Center vertically and rotate for the arrow shape */
+  z-index: 5;
+  cursor: pointer;
+}
+/* Individual arrow lines */
+.indicator span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 3px solid #f9f1e1; /* Matching your theme's cream color */
+  border-right: 3px solid #f9f1e1;
+  animation: scrollAnimate 1.5s linear infinite;
+}
+/* Staggered animation delays for the cascading effect */
+.indicator span:nth-child(1) { top: -45px; left: -45px; animation-delay: 0.0s; }
+.indicator span:nth-child(2) { top: -30px; left: -30px; animation-delay: 0.1s; }
+.indicator span:nth-child(3) { top: -15px; left: -15px; animation-delay: 0.2s; }
+.indicator span:nth-child(4) { top: 0; left: 0; animation-delay: 0.3s; }
+.indicator span:nth-child(5) { top: 15px; left: 15px; animation-delay: 0.4s; }
+.indicator span:nth-child(6) { top: 30px; left: 30px; animation-delay: 0.5s; }
+.indicator span:nth-child(7) { top: 45px; left: 45px; animation-delay: 0.6s; }
+/* Scroll Animation */
+@keyframes scrollAnimate {
+  0% {
+    border-color: #f9f1e1; /* Start with theme cream */
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+    transform: translate(10px, 10px);
+  }
+  40%, 100% {
+    border-color: #d4a373; /* End with your neon/gold point color */
+    opacity: 0;
+    transform: translate(20px, 20px);
+  }
+}
+
 /* === Next Page Button Layout === */
 .button-wrapper {
     display: flex;
     justify-content: center;
     margin-top: 50px; 
-    margin-bottom: 0;
     z-index: 10;
 }
 .link_wrapper {
@@ -252,33 +297,66 @@ body {
 }
 .link_wrapper a {
     display: block;
-    width: 300px;
-    height: 50px;
-    line-height: 44px;
+    width: 500px;
+    height: 55px;
+    line-height: 49px; 
+    font-size: 18px;
     font-weight: bold;
     text-decoration: none;
-    background: #f9f1e1;
-    text-align: center;
-    color: #1f1f1f;
+    background: #1f1f1f;
+    color: #d4a373;
     text-transform: uppercase;
     text-align: center;
     letter-spacing: 1px;
-    transition: all .35s;
+    transition: all .35s ease;
     box-sizing: border-box;
     padding: 0 40px 0 20px;
+    position: relative;
     z-index: 2;
+    border: 3px solid #d4a373; 
+    overflow: visible; 
 }
+/* --- Normal State: Continuous Neon Pulse --- */
+.link_wrapper a::before,
+.link_wrapper a::after {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border: 3px solid #d4a373;
+    border-radius: inherit;
+    opacity: 1;
+    pointer-events: none;
+    z-index: -1;
+    /* Pulsing animation active by default */
+    animation: pulseOut 2s ease-out infinite;
+}
+.link_wrapper a::after {
+    animation-delay: 1s;
+}
+/* --- Hover State: Invert Colors & Stop Pulse --- */
+.link_wrapper a:hover {
+    width: 435px;
+    background: #1f1f1f; 
+    color: #d4a373;      
+    box-shadow: 0 0 15px rgba(214, 163, 115, 0.5);
+}
+/* Stop pulsing when hovered to focus on the sliding icon */
+.link_wrapper a:hover::before,
+.link_wrapper a:hover::after {
+    display: none;
+}
+/* --- Sliding Neon Icon (Diamond Shape) --- */
 .link_wrapper .icon {
-    width: 50px;
-    height: 50px;
+    width: 65px;
+    height: 65px;
     border: 3px solid transparent;
     position: absolute;
     transform: rotate(45deg);
-    right: 0;
-    top: 0;
+    right: 30px; 
+    top: -5px;
     z-index: 1;
     transition: all .35s;
-    box-sizing: border-box;
+    opacity: 0; 
 }
 .link_wrapper .icon svg {
     width: 30px;
@@ -286,19 +364,27 @@ body {
     top: calc(50% - 15px);
     left: calc(50% - 15px);
     transform: rotate(-45deg);
-    fill: #f9f1e1;
+    fill: #1f1f1f;
     transition: all .35s;
 }
-.link_wrapper a:hover {
-    width: 250px;
-    border: 3px solid #d4a373; 
-    background: #1f1f1f;
-    color: #d4a373;
-}
+/* Hover: Icon appears and slides out */
 .link_wrapper a:hover + .icon {
     border: 3px solid #d4a373;
-    right: -20%;
+    right: -12%; 
+    opacity: 1;
+    z-index: 10;
 }
+
 .link_wrapper a:hover + .icon svg {
     fill: #d4a373;
+}
+@keyframes pulseOut {
+    0% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1.15, 1.4);
+        opacity: 0;
+    }
 }
