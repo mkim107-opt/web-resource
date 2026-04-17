@@ -60,6 +60,7 @@ nav {position: static;}
     display: inline-block;
     z-index: 200;
 }
+
 /* Middle line of the hambuger icon */
 .navicon-bar {
     position: absolute;
@@ -71,6 +72,7 @@ nav {position: static;}
     background: #222;
     z-index: 100;
 }
+
 /* Top and bottom line of the hambuger icon */
 .navicon::before,
 .navicon::after {
@@ -84,10 +86,12 @@ nav {position: static;}
 }
 .navicon::before {top: 0;}
 .navicon::after {bottom: 0;}
+
 /* Hamburger 'X' Animation (when checkbox is checked */
 #nav-toggle:checked + .navicon .navicon-bar {opacity: 0;}
 #nav-toggle:checked + .navicon::before {top: 50%; transform: translateY(-50%) rotate(-45deg);}
 #nav-toggle:checked + .navicon::after {bottom: auto; top: 50%; transform: translateY(-50%) rotate(45deg);}
+
 /* Dropdown Menu */
 .nav-items{
     display: none;
@@ -102,6 +106,7 @@ nav {position: static;}
     background: #fff;
     z-index: 99;
 }
+
 /* show the dropdown menu when the hidden checkbox is checked */
 #nav-toggle:checked ~ .nav-items {
     display: flex;
@@ -128,7 +133,6 @@ nav {position: static;}
 .nav-items li a:hover::before{
     height: 100%;
 }
-
 
 #backToTopBtn{
     display: none;

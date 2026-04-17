@@ -101,6 +101,7 @@ body {
   bottom: -0.5em;
   border-top: 0;
 }
+
 .primary-button { /* button design */
   font-family: 'Ropa Sans', sans-serif;
   color: #1f1f1f;
@@ -146,6 +147,7 @@ body {
     background-color: #1f1f1f;
     z-index: 10; 
 }
+
 /* Step Positioning layout */
 .step-1 { left: 50%; transform: translateX(-50%); width: 550px; margin-top: 150px; }
 .step-2 { left: 25%; transform: translateX(-50%); width: 350px; }
@@ -164,6 +166,7 @@ body {
     margin-top: 20px;
     padding-bottom: 100px;
 }
+
 /* Connecting Curves */
 .growth-curve {
     width: 100%;
@@ -192,6 +195,7 @@ body {
 .roast .tree-img {
     transform: scale(0.8); 
 }
+
 .curve-wrapper {
     position: relative;
     width: 100%;
@@ -212,18 +216,22 @@ body {
     pointer-events: none; 
     z-index: 5;
 }
+
 /* 1. Leaf Placements */
 .pos-1-1 { width: 45px; top: 10%; left: 45%; transform: rotate(-15deg); } 
 .pos-1-2 { width: 60px; top: 35%; left: 33%; transform: rotate(-45deg); } 
 .pos-1-3 { width: 35px; top: 65%; left: 28%; transform: rotate(10deg); }  
+
 /* 2. Flower Placements */
 .pos-2-1 { width: 185px; top: -15%;  left: 24%; transform: rotate(15deg); } 
 .pos-2-2 { width: 150px; top: 10%;   left: 40%; transform: rotate(-25deg); } 
 .pos-2-3 { width: 205px; top: 40%;   left: 50%; transform: rotate(40deg); } 
+
 /* 3. Cherry Placements */
 .pos-3-1 { width: 65px; top: 10%; left: 65%; transform: rotate(-20deg); }  
 .pos-3-2 { width: 80px; top: 40%; left: 53%; transform: rotate(-40deg); } 
-.pos-3-3 { width: 50px; top: 70%; left: 40%; transform: rotate(15deg); }   
+.pos-3-3 { width: 50px; top: 70%; left: 40%; transform: rotate(15deg); } 
+
 /* 4. Bean Placements */
 .pos-4-1 { width: 35px; top: 15%; left: 38%; transform: rotate(30deg); }  
 .pos-4-2 { width: 45px; top: 45%; left: 42%; transform: rotate(-15deg); } 
@@ -338,6 +346,7 @@ body {
   z-index: 5;
   cursor: pointer;
 }
+
 /* Individual arrow lines */
 .indicator span {
   position: absolute;
@@ -351,6 +360,7 @@ body {
   border-right: 3px solid #f9f1e1;
   animation: scrollAnimate 1.5s linear infinite;
 }
+
 /* Staggered animation delays for the cascading effect */
 .indicator span:nth-child(1) { top: -45px; left: -45px; animation-delay: 0.0s; }
 .indicator span:nth-child(2) { top: -30px; left: -30px; animation-delay: 0.1s; }
@@ -379,7 +389,7 @@ body {
 }
 
 
-/* === Next Page Button Layout === */
+/* === What's Your Perfect Bean Button === */
 .button-wrapper {
     display: flex;
     justify-content: center;
@@ -410,7 +420,6 @@ body {
     border: 3px solid #d4a373; 
     overflow: visible; 
 }
-/* --- Normal State: Continuous Neon Pulse --- */
 .link_wrapper a::before,
 .link_wrapper a::after {
     content: "";
@@ -427,19 +436,18 @@ body {
 .link_wrapper a::after {
     animation-delay: 1s;
 }
-/* --- Hover State: Invert Colors & Stop Pulse --- */
 .link_wrapper a:hover {
     width: 435px;
     background: #1f1f1f; 
     color: #d4a373;      
     box-shadow: 0 0 15px rgba(214, 163, 115, 0.5);
 }
-/* Stop pulsing when hovered to focus on the sliding icon */
 .link_wrapper a:hover::before,
 .link_wrapper a:hover::after {
     display: none;
 }
-/* --- Sliding Neon Icon (Diamond Shape) --- */
+
+/* Sliding Neon Icon (Diamond Shape) */
 .link_wrapper .icon {
     width: 65px;
     height: 65px;
@@ -461,6 +469,7 @@ body {
     fill: #1f1f1f;
     transition: all .35s;
 }
+
 /* Hover: Icon appears and slides out */
 .link_wrapper a:hover + .icon {
     border: 3px solid #d4a373;
@@ -483,11 +492,96 @@ body {
 }
 
 
+/** Medium for the small screen **/
 @media (max-width: 700px) {
-    .growth {
-        width: 60vw; 
+    .intro-container {
+        position: absolute;
+        top: 220px; 
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        align-items: center; 
+        text-align: center;
+        z-index: 50; 
+        margin: 0;
     }
-    .step-1 { margin-top: 10vh; }
+    
+    .main-title {
+        font-size: 2.8rem; 
+        line-height: 1.1; 
+    }
+
+    .sub-description {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .primary-button:hover,
+    .primary-button:active {
+    background-position: 40%;
+    border-color: #24a0ed;
+    }
+
+    .growth-curve {
+        display: none; 
+    }
+
+    .curve-wrapper {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0px;
+        min-height: 60px; 
+        border-left: 5px dashed rgba(255, 255, 255, 0.4);
+        margin: 10px 0;
+    }
+
+    .deco-img{display: none;}
+    
+    .indicator {
+        width: 18px;
+        height: 18px;
+        top: auto;          
+        bottom: 5vh;        
+        left: 50%;       
+        right: auto;  
+        transform: translateX(-50%) rotate(45deg); 
+        z-index: 99;
+    }
+
+    .step-1 { 
+        width: 80vw;
+        height: 80vw;
+        margin-top: 40px; 
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0.7;
+    }
+
+    .step-2, .step-3, .step-4, .step-5 {
+        width: 280px;
+        height: 280px;
+        margin-top: 20px; 
+        left: 50%;
+        transform: translateX(-50%)
+    }
+
+    .step-6 {
+        padding-bottom: 0; 
+        min-height: calc(100vh - 100px); 
+        justify-content: center; 
+    }
+
+    .canvas {
+        width: 75vw;
+        max-width: 350px;
+        margin: 0 auto; 
+    }
+
+    .button-wrapper {
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+    }
 
     .link_wrapper a {
         width: 85vw; 
@@ -497,13 +591,13 @@ body {
         letter-spacing: 0.5px;
         line-height: 45px;
         padding: 0 5vw;
-
         white-space: nowrap; 
         overflow: hidden;
         text-overflow: ellipsis;
     }
 
-    .link_wrapper a:hover {
+    .link_wrapper a:hover,
+    .link_wrapper a:active {
         width: 85vw;
         max-width: 340px;     
     }
@@ -515,12 +609,15 @@ body {
         top: 2px;
     }
 
-    .link_wrapper a:hover + .icon {
+    .link_wrapper a:hover + .icon,
+    .link_wrapper a:active + .icon {
         right: -10%; 
         opacity: 1;
         z-index: 10;
     }
-} 
+
+   
+}
 
 
 
