@@ -25,17 +25,18 @@ topBtn.addEventListener("click", function() {
 
 
 /* === + - setup === */
-function toggleFilter(header) {
+function toggleFilter() {
+    const header= this;
     const group = header.parentElement;
     group.classList.toggle('collapsed');
-    
+
     const icon = header.querySelector('.toggle-icon');
-    if (group.classList.contains('collapsed')) {
-        icon.textContent = '+';
-    } else {
-        icon.textContent = '-';
-    }
+    if (!icon) return;
+
+    icon.textContent = group.classList.contains('collapsed')? '+' : '-';
 }
+
+
 function showAll(btn) {
     // alert("Show all labels hidden");
     const content = btn.parentElement;

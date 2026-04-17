@@ -22,11 +22,7 @@
         If you need more knowledge?
     </div>
     
-    <div class="button-borders">
-        <button class="primary-button" onclick="location.href='coffee-bean-types.html'">
-            CLICK HERE!
-        </button>
-    </div>
+    <button class="primary-button bordered" onclick="location.href='coffee-bean-types.html'">CLICK HERE!</button>
 </div>
 
     <div class="main-container">
@@ -39,7 +35,7 @@
             <hr>
 
             <div class="filter-group">
-                <div class="filter-header" onclick="toggleFilter(this)">
+                <div class="filter-header">
                     <h4>Primary Taste</h4>
                     <span class="toggle-icon">-</span>
                 </div>
@@ -64,12 +60,12 @@
                     <label><input type="checkbox" name="flavor" value="intense">Intense</label>
                     <label><input type="checkbox" name="flavor" value="tart">Tart</label>
                     <label><input type="checkbox" name="flavor" value="clean">Clean</label>
-                    <div class="view-more" onclick="showAll(this)">+ View More</div>
+                    <div class="view-more">+ View More</div>
                 </div>
             </div>
 
             <div class="filter-group">
-                <div class="filter-header" onclick="toggleFilter(this)">
+                <div class="filter-header">
                     <h4>Aroma</h4>
                     <span class="toggle-icon">-</span>
                 </div>
@@ -125,13 +121,13 @@
                     <label><input type="checkbox" name="aroma" value="roasted-peanut">Roasted Peanut</label>
                     <label><input type="checkbox" name="aroma" value="jackfruit">Jackfruit</label>
                     <label><input type="checkbox" name="aroma" value="anise">Anise</label>
-                    <div class="view-more" onclick="showAll(this)">+ View More</div>
+                    <div class="view-more">+ View More</div>
                 </div>
 
             </div>
 
             <div class="filter-group">
-                <div class="filter-header" onclick="toggleFilter(this)">
+                <div class="filter-header">
                     <h4>Origin</h4>
                     <span class="toggle-icon">-</span>
                 </div>
@@ -162,7 +158,7 @@
                     <label><input type="checkbox" name="origin" value="usa">USA (Hawaii)</label>
                     <label><input type="checkbox" name="origin" value="vietnam">Vietnam</label>
                     <label><input type="checkbox" name="origin" value="yemen">Yemen</label>
-                    <div class="view-more" onclick="showAll(this)">+ View More</div>
+                    <div class="view-more">+ View More</div>
                 </div>
 
             </div>
@@ -254,8 +250,11 @@
             });
     </script>
 
+    <script src="../Javascript/data.js"></script>
     <script src="../Javascript/animation.js"></script>
     <script src="../Javascript/filter.js"></script>
+   
+
 </body>
 
 </html>

@@ -126,15 +126,21 @@ a {text-decoration: none;}
     text-align: left;
     width: 30%; /* Keeps the first column a consistent width */
 }
-@media (max-width: 700px) { /* Mobile responsive adjustments */
-    .coffee-table th, 
-    .coffee-table td {
-        padding: 12px;
-        font-size: 14px;
-    }
-    .coffee-table th {
-        font-size: 18px;
-    }
+
+table.coffee-table th a {
+    color: #4A3C31;
+    background-color: #E8DCC4;
+    border-radius: 25px;
+    text-decoration: none; 
+    cursor: pointer; 
+    display: block; 
+}
+table.coffee-table th a:hover {
+    color: #fff; 
+    background-color: #6f4e37;
+}
+html {
+    scroll-behavior: smooth;
 }
 
 .article-section{
@@ -151,10 +157,11 @@ a {text-decoration: none;}
     padding-bottom: 15px;
     margin-bottom: 30px;
 }
-.intro-text{
+.detail-text{
     font-size: 1.05em;
     margin-bottom: 24px;
 }
+
 /* === Arabica Varieties Archive Section === */
 .archive-container {
     max-width: 800px;
@@ -186,6 +193,18 @@ a {text-decoration: none;}
     color: #4a332a;
     transition: background-color 0.2s ease;
 }
+.archive-summary::after {
+    content: '▼'; 
+    font-size: 0.8rem;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+.archive-item[open] .archive-summary::after {
+    transform: rotate(180deg);
+}
+.archive-item[open] .archive-summary {
+    background-color: #f2e4cf; 
+}
 .bean-name { 
     flex: 1;
 }
@@ -194,6 +213,7 @@ a {text-decoration: none;}
     font-weight: 400;
     color: #718096;
 }
+
 /* Varieties - hidden detailed content section */
 .archive-content {
     padding: 30px;
@@ -209,5 +229,16 @@ a {text-decoration: none;}
 }
 .archive-content li {
     margin-bottom: 8px;
+}
+
+@media (max-width: 700px) { /* Mobile responsive adjustments */
+    .coffee-table th, 
+    .coffee-table td {
+        padding: 12px;
+        font-size: 14px;
+    }
+    .coffee-table th {
+        font-size: 18px;
+    }
 }
 

@@ -23,9 +23,115 @@ a {text-decoration: none;}
 body {
     padding-top: 100px; 
     min-height: 100vh;
-    position: relative;
     background-color: #1f1f1f;
 }
+
+.intro-container {
+  position: absolute;
+  left: 10%;        
+  top: 50%;            
+  transform: translateY(-50%); 
+  width: 40%;          
+  text-align: left;  
+  z-index: 50; 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.main-title {
+  font-size: 3.8rem;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 0.5rem;
+  color: #f9f1e1;
+}
+.sub-description {
+  font-size: 1.1rem;
+  color: #f9f1e1;
+  margin: 0;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+/* === Next Page Button === */
+.button-container {
+    position: relative;
+    display: block;
+    top: auto;    
+    right: auto;   
+}
+.button-borders {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    align-items: center; 
+    gap: 20px;         
+    margin-bottom: 2px;
+}
+.button-guide-text {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    color: #222;      
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+    opacity: 0.8;  
+    animation: slideIn 1s ease-out;
+}
+.button-guide-text span {
+    display: inline-block;
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+.button-borders:before, .button-borders:after {
+  content: "";
+  position: absolute;
+  width: calc(100% + 1em);
+  height: 60%;
+  left: -0.5em;
+  border: 1px solid #1f1f1f; 
+  pointer-events: none;
+}
+.button-borders:before {
+  top: -0.5em;
+  border-bottom: 0;
+}
+.button-borders:after {
+  bottom: -0.5em;
+  border-top: 0;
+}
+.primary-button { /* button design */
+  font-family: 'Ropa Sans', sans-serif;
+  color: #1f1f1f;
+  cursor: pointer;
+  font-size: 16px; 
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  border: 1px solid #f9f1e1;
+  padding: 15px 40px; 
+  background-color: #f9f1e1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 531.28 200'%3E%3Cdefs%3E%3Cstyle%3E .shape %7B fill: %2324a0ed; %7D %3C/style%3E%3C/defs%3E%3Cg%3E%3Cpolygon class='shape' points='415.81 200 0 200 115.47 0 531.28 0 415.81 200' /%3E%3C/g%3E%3C/svg%3E");
+  background-size: 200%;
+  background-position: 200%;
+  background-repeat: no-repeat;
+  transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+}
+.primary-button:hover {
+  background-position: 40%;
+  border-color: #24a0ed;
+}
+.primary-button:after {
+  content: "";
+  position: absolute;
+  background-color: #24a0ed;
+  width: 5px;
+  height: 5px;
+  bottom: -1px;
+  right: -1px;
+}
+
 
 /* === Circular containers for the growth steps === */
 .growth {
@@ -72,9 +178,6 @@ body {
     stroke: rgba(255, 255, 255, 0.4);
     stroke-width: 2px;
     stroke-dasharray: 6, 6;  /* Creates the dashed effect */
-}
-.growth-wrapper {
-    padding-bottom: 0; 
 }
 .tree-img {
     width: 100%;         
@@ -211,16 +314,6 @@ body {
     width: 100%;
     height: 100%;
     position: absolute;
-    top: 50%;
-    left: 73%;
-    transform: translate(-50%, -50%);
-    background: linear-gradient(70deg,rgba(187, 164, 129, 0.29) 0%, rgba(111, 97, 84, 0.42) 44%, rgba(169, 157, 134, 0.25) 54%, rgba(173, 166, 150, 0.46) 65%, rgba(226, 220, 220, 0.19) 74%,rgba(220, 220, 220, 0.23) 100%);
-    clip-path: polygon(12% 17%, 14% 16%, 16% 15%, 20% 14%, 26% 13%, 29% 13%, 34% 14%, 36% 14%, 39% 14%, 41% 14%, 43% 15%, 45% 16%, 49% 17%, 56% 18%, 60% 20%, 65% 21%, 68% 23%, 78% 25%, 80% 27%, 83% 30%, 88% 38%, 92% 41%, 94% 44%, 94% 46%, 92% 50%, 92% 52%, 92% 56%, 89% 59%, 87% 60%, 85% 60%, 83% 59%, 81% 58%, 79% 58%, 78% 59%, 77% 62%, 77% 66%, 76% 69%, 74% 74%, 73% 75%, 72% 76%, 69% 77%, 68% 79%, 66% 82%, 64% 83%, 60% 84%, 58% 84%, 56% 84%, 52% 85%, 50% 86%, 47% 87%, 44% 88%, 40% 89%, 37% 90%, 35% 90%, 29% 90%, 28% 90%, 20% 89%, 17% 88%, 10% 84%, 4% 79%, 2% 75%, 3% 71%, 3% 63%, 5% 59%, 5% 50%, 2% 45%, 1% 41%, 2% 34%, 5% 27%, 8% 24%, 9% 22%, 10% 19%);
-}
-.hot-steam {
-    width: 100%;
-    height: 100%;
-    position: absolute;
     top: 50%;   
     left: 65%;  
     transform: translate(-50%, -50%);
@@ -236,12 +329,12 @@ body {
 
 /* Container for the scroll indicator */
 .indicator {
-  position: absolute; /* Relative to the nearest positioned parent (the tree container) */
-  top: 18%;           /* Vertically centered relative to the tree */
-  right: 10%;         /* Spacing from the right side of the screen/container */
-  width: 30px;        /* Slightly smaller for a cleaner look */
-  height: 30px;
-  transform: translateY(-50%) rotate(45deg); /* Center vertically and rotate for the arrow shape */
+  position: absolute; 
+  top: 50%;          
+  right: 10%;       
+  width: 30px; 
+  height: 30px;       
+  transform: translateY(-50%) rotate(45deg);
   z-index: 5;
   cursor: pointer;
 }
@@ -254,7 +347,7 @@ body {
   height: 100%;
   box-sizing: border-box;
   border: none;
-  border-bottom: 3px solid #f9f1e1; /* Matching your theme's cream color */
+  border-bottom: 3px solid #f9f1e1; 
   border-right: 3px solid #f9f1e1;
   animation: scrollAnimate 1.5s linear infinite;
 }
@@ -266,6 +359,7 @@ body {
 .indicator span:nth-child(5) { top: 15px; left: 15px; animation-delay: 0.4s; }
 .indicator span:nth-child(6) { top: 30px; left: 30px; animation-delay: 0.5s; }
 .indicator span:nth-child(7) { top: 45px; left: 45px; animation-delay: 0.6s; }
+
 /* Scroll Animation */
 @keyframes scrollAnimate {
   0% {
@@ -284,6 +378,7 @@ body {
   }
 }
 
+
 /* === Next Page Button Layout === */
 .button-wrapper {
     display: flex;
@@ -298,7 +393,6 @@ body {
 .link_wrapper a {
     display: block;
     width: 500px;
-    height: 55px;
     line-height: 49px; 
     font-size: 18px;
     font-weight: bold;
@@ -374,7 +468,6 @@ body {
     opacity: 1;
     z-index: 10;
 }
-
 .link_wrapper a:hover + .icon svg {
     fill: #d4a373;
 }
@@ -388,3 +481,46 @@ body {
         opacity: 0;
     }
 }
+
+
+@media (max-width: 700px) {
+    .growth {
+        width: 60vw; 
+    }
+    .step-1 { margin-top: 10vh; }
+
+    .link_wrapper a {
+        width: 85vw; 
+        max-width: 340px;
+        min-width: 200px;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        line-height: 45px;
+        padding: 0 5vw;
+
+        white-space: nowrap; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .link_wrapper a:hover {
+        width: 85vw;
+        max-width: 340px;     
+    }
+
+    .link_wrapper .icon {
+        width: 45px;
+        height: 45px;
+        right: 15px; 
+        top: 2px;
+    }
+
+    .link_wrapper a:hover + .icon {
+        right: -10%; 
+        opacity: 1;
+        z-index: 10;
+    }
+} 
+
+
+
