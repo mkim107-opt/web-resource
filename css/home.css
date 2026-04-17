@@ -496,7 +496,7 @@ body {
 @media (max-width: 700px) {
     .intro-container {
         position: absolute;
-        top: 220px; 
+        top: 270px; 
         left: 50%;
         transform: translateX(-50%);
         width: 90%;
@@ -550,8 +550,8 @@ body {
     }
 
     .step-1 { 
-        width: 80vw;
-        height: 80vw;
+        width: 90vw;
+        height: 90vw;
         margin-top: 40px; 
         left: 50%;
         transform: translateX(-50%);
