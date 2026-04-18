@@ -178,3 +178,100 @@ p {
     background-color: #CCCCCC;
     border-radius: 10px;
 }
+
+/** Media Query for Small Screen (700px) **/
+@media (max-width: 700px) {
+    body {
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto; 
+        display: block;  
+        padding: 100px 15px 40px 15px; 
+    }
+
+    .detail-container {
+        flex-direction: column;
+        width: 100%;
+        max-width: 500px;  
+        height: auto;          
+        margin: 0 auto;
+        border-radius: 20px;
+    }
+
+    .image-side {
+        flex: 0 0 350px;
+        width: 100%;
+    }
+
+    .content-section {
+        padding: 30px 25px;    
+        overflow-y: visible;  
+    }
+
+    h1 {
+        font-size: 1.8rem;  
+        line-height: 1.2;
+    }
+
+    .origin {
+        font-size: 1rem;
+    }
+
+    .bean-type-tags {
+        gap: 8px;
+        margin-top: 15px;
+    }
+
+    .spec-section {
+        margin: 25px 0 10px 0;
+    }
+
+    .spec-item {
+        padding: 12px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .dot {
+        width: 9px;
+        height: 9px;
+        gap: 4px;
+    }
+
+    p {
+        font-size: 0.95rem; 
+        line-height: 1.6;
+    }
+}
+
+
+/** Media Query for Large Screen (2560px) **/
+@media (min-width: 2560px) {
+    .detail-container {
+        max-width: 1600px; 
+        height: 70vh; 
+    }
+
+    h1 { font-size: 3.5rem; }
+    .origin { font-size: 1.8rem; }
+    p { font-size: 1.4rem; }
+    h3 { font-size: 1.1rem; margin-top: 40px; }
+
+    .species-tag, .caffeine-tag {
+        padding: 8px 20px;
+        font-size: 1.2rem;
+    }
+
+    .content-section {
+        padding: 80px 100px; 
+    }
+
+    .spec-item { padding: 15px 0; }
+    
+    .dot {
+        width: 14px;
+        height: 14px;
+        gap: 8px;
+    }
+}
