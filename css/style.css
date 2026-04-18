@@ -130,7 +130,7 @@ nav {position: static;}
     transition: height 0.3s ease; 
     z-index: 1; 
 }
-.nav-items li a:hover::before{
+.nav-items li a:hover::before {
     height: 100%;
 }
 
@@ -164,7 +164,7 @@ nav {position: static;}
 
 @media (max-width: 700px) {
     .nav-items li a {
-        font-size: 35px; 
+        font-size: 35px;
     }
 
     .nav-items li a:active {
