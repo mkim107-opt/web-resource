@@ -537,8 +537,8 @@ body {
     .deco-img{display: none;}
 
     .step-1 { 
-        width: 90vw;
-        height: 90vw;
+        width: 100vw;
+        height: 100vw;
         margin-top: 40px; 
         left: 50%;
         transform: translateX(-50%);
@@ -578,29 +578,28 @@ body {
         letter-spacing: 0.5px;
         line-height: 45px;
         padding: 0 5vw;
-        white-space: nowrap; 
-        overflow: hidden;
-        text-overflow: ellipsis;
     }
 
-    .link_wrapper a:hover,
-    .link_wrapper a:active {
-        width: 85vw;
-        max-width: 340px;     
+    .link_wrapper a::before,
+    .link_wrapper a::after {
+        display: block; 
+        animation: pulseOut 2s ease-out infinite;
     }
 
-    .link_wrapper .icon {
-        width: 45px;
-        height: 45px;
-        right: 15px; 
-        top: 2px;
+    .link_wrapper a:hover::before,
+    .link_wrapper a:hover::after,
+    .link_wrapper a:active::before,
+    .link_wrapper a:active::after {
+        display: none;
     }
 
-    .link_wrapper a:hover + .icon,
-    .link_wrapper a:active + .icon {
-        right: -10%; 
-        opacity: 1;
-        z-index: 10;
+    .link_wrapper a:hover {
+        width: 85vw; 
+        max-width: 340px;
+    }
+
+    .link_wrapper a:hover + .icon {
+        display: none;
     }
 }
 
