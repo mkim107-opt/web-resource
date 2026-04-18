@@ -166,10 +166,6 @@ nav {position: static;}
     .nav-items li a {
         font-size: 35px;
     }
-
-    .nav-items li a:active {
-        color: #fff;
-    }
     
     .nav-items li a:active::before {
         height: 100%;
