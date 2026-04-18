@@ -232,14 +232,77 @@ html {
     margin-bottom: 8px;
 }
 
-@media (max-width: 700px) { 
+/** Media Query for Small Screen (700px) **/
+@media (max-width: 700px) {
+    .banner {
+        height: 60vh; 
+        margin-top: 100px;
+        background-attachment: scroll; 
+    }
+    
+    .banner h1 {
+        font-size: 2.2rem; 
+        padding: 0 20px;
+    }
+
+    .mouse-container {
+        display: none;
+    }
+
+    .content {
+        padding: 50px 20px;
+        height: auto;
+    }
+
+    .comparison-wrapper {
+        margin: 40px 0;
+        overflow-x: auto; 
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .comparison-title {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+    }
+
+    .coffee-table {
+        min-width: 600px; 
+    }
+
     .coffee-table th, 
     .coffee-table td {
-        padding: 12px;
+        padding: 12px 15px;
         font-size: 14px;
     }
+
     .coffee-table th {
         font-size: 18px;
+    }
+
+    .article-section,
+    .archive-container {
+        padding: 0 10px;
+        margin-bottom: 50px;
+    }
+
+    .article-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .archive-summary {
+        padding: 15px;
+        font-size: 1rem;
+    }
+
+    .bean-origin {
+        font-size: 0.8rem;
+        display: block; 
+        margin-top: 4px;
+    }
+
+    .archive-content {
+        padding: 20px;
+        font-size: 0.9rem;
     }
 }
 
