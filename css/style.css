@@ -162,3 +162,16 @@ nav {position: static;}
     background-color: #2d3748;
 }
 
+@media (max-width: 700px) {
+    .nav-items li a {
+        font-size: 35px; 
+    }
+
+    .nav-items li a:active {
+        color: #fff;
+    }
+    
+    .nav-items li a:active::before {
+        height: 100%;
+    }
+}
